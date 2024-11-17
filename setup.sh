@@ -25,7 +25,7 @@ pacman -Syu --noconfirm
 
 # Install packages via pacman (official repos)
 echo "Installing official packages via pacman..."
-pacman -S --noconfirm wayland wayland-protocols copyq waybar swaylock thunar dolphin gammastep firefox chromium rofi-wayland lsd fastfetch
+pacman -S --noconfirm wayland wayland-protocols copyq waybar swaylock thunar dolphin gammastep firefox chromium rofi-wayland lsd fastfetch alacritty
 
 # Install AUR packages via yay
 echo "Installing AUR packages via yay..."
