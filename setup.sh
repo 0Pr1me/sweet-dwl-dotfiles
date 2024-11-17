@@ -29,7 +29,7 @@ pacman -S --noconfirm wayland wayland-protocols copyq waybar swaylock thunar dol
 
 # Install AUR packages via yay
 echo "Installing AUR packages via yay..."
-sudo -u $USERNAME yay -S --noconfirm wlroots-git wlogout bibata-cursor-theme
+sudo -u $USERNAME yay -S --noconfirm wlroots-git wlogout
 
 # Clean up yay build files
 echo "Cleaning up yay build files..."
