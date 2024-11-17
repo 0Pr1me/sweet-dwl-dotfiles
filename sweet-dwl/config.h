@@ -28,7 +28,7 @@ static int log_level = WLR_ERROR;
 
 /* Autostart */
 static const char *const autostart[] = {
-        "wbg", "/home/optimuscrime/Pictures/endevourwallpapernice.png", NULL,
+        "wbg", "pathToYourWallpaper.png", NULL,
         "waybar", NULL, "nm-applet", NULL, "copyq", NULL, "refreshrate.sh", NULL /* terminate */
 };
 
