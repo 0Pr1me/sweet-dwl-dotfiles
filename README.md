@@ -17,7 +17,15 @@ Sweet dwl config along with all neccessary components to create a sweet desktop 
   sudo chmod +x setup.sh
 ```
 
-### run setup.sh as root:
+### Run setup.sh as root:
 ```
   sudo ./setup.sh
+```
+### To choose your own wallpaper:
+1. Open sweet-dwl folder
+2. Edit config.h
+3. Replace "pathToYourWallpaper" with a path to Your chosen image here:
+```
+static const char *const autostart[] = {
+        "wbg", "pathToYourWallpaper", NULL,
 ```
