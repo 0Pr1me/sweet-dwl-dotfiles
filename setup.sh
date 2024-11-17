@@ -25,11 +25,11 @@ pacman -Syu --noconfirm
 
 # Install packages via pacman (official repos)
 echo "Installing official packages via pacman..."
-pacman -S --noconfirm wayland wayland-protocols copyq waybar swaylock thunar dolphin gammastep firefox chromium rofi-wayland
+pacman -S --noconfirm wayland wayland-protocols copyq waybar swaylock thunar dolphin gammastep firefox chromium rofi-wayland lsd
 
 # Install AUR packages via yay
 echo "Installing AUR packages via yay..."
-sudo -u $USERNAME yay -S --noconfirm wlroots-git wlogout
+sudo -u $USERNAME yay -S --noconfirm wlroots-git wlogout bibata-cursor-theme
 
 # Clean up yay build files
 echo "Cleaning up yay build files..."
@@ -58,6 +58,18 @@ if [ -d "$SWEET_DWL_DIR" ]; then
   echo "sweet-dwl installed successfully."
 else
   echo "Warning: 'sweet-dwl' directory not found."
+fi
+
+# Copy the contents of the "scripts" folder to /usr/local/bin and make them executable
+SCRIPTS_DIR=$(dirname "$0")/scripts
+
+if [ -d "$SCRIPTS_DIR" ]; then
+  echo "Copying scripts to /usr/local/bin..."
+  cp -r $SCRIPTS_DIR/* /usr/local/bin/
+  chmod +x /usr/local/bin/*
+  echo "Scripts copied and made executable."
+else
+  echo "Warning: 'scripts' directory not found."
 fi
 
 echo "Setup complete!"
