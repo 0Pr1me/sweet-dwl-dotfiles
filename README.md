@@ -8,14 +8,16 @@ Sweet dwl config along with all neccessary components to create a sweet desktop 
 ## Installation
 
 ### Clone this repository using:
-
-git clone https://github.com/MikolajFrycz/sweet-dwl-dotfiles
-
+<script>
+  git clone https://github.com/MikolajFrycz/sweet-dwl-dotfiles
+</script>
 ### Open the cloned folder and make setup.sh executable:
-
-cd sweet-dwl-dotfiles
-sudo chmod +x setup.sh
+<script>
+  cd sweet-dwl-dotfiles
+  sudo chmod +x setup.sh
+</script>
 
 ### run setup.sh as root:
-
-sudo ./setup.sh
+<script>
+  sudo ./setup.sh
+</script>
