@@ -2,6 +2,25 @@
 Sweet dwl config along with all neccessary components to create a sweet desktop experience :)
 ![screenshot_2024-11-17-155846](https://github.com/user-attachments/assets/64958040-6dcf-4c87-8339-34c918afab2f)
 
+# This cofniguration contains:
+## Patched and configured dwl wayland compositor
+The dwl compositor is patched with:
+- gaps
+- autostart
+- cursortheme
+Configuration contains:
+- Full function key configuration (shortcuts available in config.h)
+- waybar and waypaper restore for autostart
+- other tweaks and custom shortcuts
+## Waybar and other important tools
+- Configured waybar with many tools
+- Rofi
+- Waypaper wallpaper switcher (available through rofi and waybar)
+- copyq clipboard manager (available through rofi and waybar)
+- Network Manager Applet,
+- Arch updates indicator and update button (waybar)
+- Blue light filter switcher with gammastep (waybar)
+- more
 
 ![screenshot_2024-11-17-155904](https://github.com/user-attachments/assets/da48d275-6645-458d-b36c-4c6d9dde4281)
 
