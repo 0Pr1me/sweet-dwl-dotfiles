@@ -3,7 +3,7 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces","custom/appmenu","custom/firefox","custom/files","custom/chatgpt"],
+    "modules-left": ["hyprland/workspaces","custom/appmenu","custom/firefox","custom/files","custom/waypaper","custom/chatgpt"],
     "modules-center": ["custom/music"],
     "modules-right": ["pulseaudio", "backlight", "battery", "clock", "tray", "custom/lock", "custom/gammastep", "custom/pacman", "custom/power"],
     "hyprland/workspaces": {
@@ -93,6 +93,12 @@
     	"on-click": "thunar",
 	"format": ""
     },
+    "custom/waypaper": {
+    	"tooltip": true,
+	"tooltip-format": "Wallpaper Switcher",
+	"on-click": "waypaper",
+        "format": "󰸉"	
+    },
     "custom/gammastep": {
     	"tooltip": true,
 	"tooltip-format": "On/Off Night Mode",
@@ -108,7 +114,7 @@
     },
     "custom/pacman": {
   	"format": "{}{icon}",
-	"on-click": "alacritty -e bash -c 'echo \"Running full system upgrade with pacman -Syu...\"; sudo pacman -Syu; exec bash'",
+	"on-click": "alacritty -e bash -c 'echo \"Running full system upgrade with yay...\"; yay; exec bash'",
   	"return-type": "json",
   	"format-icons": {
     	"pending-updates": "  ",
