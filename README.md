@@ -5,6 +5,9 @@ Sweet dwl config along with all neccessary components to create a sweet desktop 
 
 ![screenshot_2024-11-17-155904](https://github.com/user-attachments/assets/da48d275-6645-458d-b36c-4c6d9dde4281)
 
+![screenshot_2024-11-18-195406](https://github.com/user-attachments/assets/0ee19cde-31f7-4c69-90b0-fe83c6bee0e1)
+
+
 ## Installation
 
 ### Clone this repository using:
