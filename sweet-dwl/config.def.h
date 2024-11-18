@@ -28,7 +28,7 @@ static int log_level = WLR_ERROR;
 
 /* Autostart */
 static const char *const autostart[] = {
-        "wbg", "/home/optimuscrime/Pictures/endevourwallpapernice.png", NULL,
+	"waypaper", "--restore", NULL,
         "waybar", NULL, "nm-applet", NULL, "copyq", NULL, "refreshrate.sh", NULL /* terminate */
 };
 
@@ -111,7 +111,7 @@ LIBINPUT_CONFIG_ACCEL_PROFILE_FLAT
 LIBINPUT_CONFIG_ACCEL_PROFILE_ADAPTIVE
 */
 static const enum libinput_config_accel_profile accel_profile = LIBINPUT_CONFIG_ACCEL_PROFILE_ADAPTIVE;
-static const double accel_speed = -1.0;
+static const double accel_speed = -0.65;
 
 /* You can choose between:
 LIBINPUT_CONFIG_TAP_MAP_LRM -- 1/2/3 finger tap maps to left/right/middle
