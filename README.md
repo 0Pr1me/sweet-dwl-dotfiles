@@ -8,6 +8,7 @@ The dwl compositor is patched with:
 - gaps
 - autostart
 - cursortheme
+
 Configuration contains:
 - Full function key configuration (shortcuts available in config.h)
 - waybar and waypaper restore for autostart
