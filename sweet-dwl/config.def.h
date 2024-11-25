@@ -28,7 +28,7 @@ static int log_level = WLR_ERROR;
 
 /* Autostart */
 static const char *const autostart[] = {
-	"waypaper", "--restore", NULL,
+	"waypaper", "--restore", NULL, "blueman-applet", NULL,
         "waybar", NULL, "nm-applet", NULL, "copyq", NULL, "refreshrate.sh", NULL /* terminate */
 };
 
