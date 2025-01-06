@@ -38,6 +38,7 @@ yay -Yc --noconfirm
 # Compile and install sweet-dwl compositor
 # Step 1: Change to the 'sweet-dwl' directory
 cd ..
+cd /sweet-dwl-dotfiles/
 cd "$(dirname "$0")/sweet-dwl" || { echo "Directory sweet-dwl not found!"; exit 1; }
 
 # Step 2: Run 'make' to compile the project
@@ -47,12 +48,12 @@ make || { echo "Make failed!"; exit 1; }
 make install || { echo "Make install failed!"; exit 1; }
 
 echo "Build and installation completed successfully."
-
+cd ..
 # Step 4: Copy the contents of the 'configs' directory to /home/.config
 CONFIGS_DIR="$(dirname "$0")/configs"
 if [ -d "$CONFIGS_DIR" ]; then
   echo "Copying config files to /home/.config"
-  cp -r "$CONFIGS_DIR"/* /home/.config/ || { echo "Failed to copy config files!"; exit 1; }
+  cp -r "$CONFIGS_DIR"/* /home/$(ls /home | head -n 1)/.config/ || { echo "Failed to copy config files!"; exit 1; }
 else
   echo "Config directory not found!"
   exit 1
