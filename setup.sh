@@ -35,11 +35,13 @@ sudo -u $USERNAME yay -S --noconfirm wlroots-git wlogout
 echo "Cleaning up yay build files..."
 yay -Yc --noconfirm
 
+cd ..
 
 # Compile and install sweet-dwl compositor
 # Step 1: Change to the 'sweet-dwl' directory
-pwd
+
 cd /sweet-dwl-dotfiles/
+pwd
 cd "$(dirname "$0")/sweet-dwl" || { echo "Directory sweet-dwl not found!"; exit 1; }
 
 # Step 2: Run 'make' to compile the project
