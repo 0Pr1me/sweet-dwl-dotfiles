@@ -37,6 +37,7 @@ yay -Yc --noconfirm
 
 # Compile and install sweet-dwl compositor
 # Step 1: Change to the 'sweet-dwl' directory
+cd ..
 cd "$(dirname "$0")/sweet-dwl" || { echo "Directory sweet-dwl not found!"; exit 1; }
 
 # Step 2: Run 'make' to compile the project
