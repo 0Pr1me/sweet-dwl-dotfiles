@@ -35,41 +35,39 @@ sudo -u $USERNAME yay -S --noconfirm wlroots-git wlogout
 echo "Cleaning up yay build files..."
 yay -Yc --noconfirm
 
-# Copy the contents of the "configs" folder to ~/.config
-echo "Copying configuration files to ~/.config..."
-CONFIGS_DIR=$(dirname "$0")/configs
-
-if [ -d "$CONFIGS_DIR" ]; then
-  cp -r $CONFIGS_DIR/* $USER_HOME/.config/
-  chown -R $USERNAME:$USERNAME $USER_HOME/.config
-  echo "Configuration files copied successfully."
-else
-  echo "Warning: 'configs' directory not found."
-fi
-
 # Compile and install sweet-dwl compositor
-SWEET_DWL_DIR=$(dirname "$0")/sweet-dwl
+# Step 1: Change to the 'sweet-dwl' directory
+cd "$(dirname "$0")/sweet-dwl" || { echo "Directory sweet-dwl not found!"; exit 1; }
 
-if [ -d "$SWEET_DWL_DIR" ]; then
-  echo "Compiling and installing sweet-dwl..."
-  cd $SWEET_DWL_DIR
-  sudo -u $USERNAME make
-  make install
-  echo "sweet-dwl installed successfully."
+# Step 2: Run 'make' to compile the project
+make || { echo "Make failed!"; exit 1; }
+
+# Step 3: Run 'make install' to install the project
+make install || { echo "Make install failed!"; exit 1; }
+
+echo "Build and installation completed successfully."
+
+# Step 4: Copy the contents of the 'configs' directory to /home/.config
+CONFIGS_DIR="$(dirname "$0")/configs"
+if [ -d "$CONFIGS_DIR" ]; then
+  echo "Copying config files to /home/.config"
+  cp -r "$CONFIGS_DIR"/* /home/.config/ || { echo "Failed to copy config files!"; exit 1; }
 else
-  echo "Warning: 'sweet-dwl' directory not found."
+  echo "Config directory not found!"
+  exit 1
 fi
 
-# Copy the contents of the "scripts" folder to /usr/local/bin and make them executable
-SCRIPTS_DIR=$(dirname "$0")/scripts
-
+# Step 5: Make contents of the 'scripts' directory executable and copy them to /usr/local/bin
+SCRIPTS_DIR="$(dirname "$0")/scripts"
 if [ -d "$SCRIPTS_DIR" ]; then
-  echo "Copying scripts to /usr/local/bin..."
-  cp -r $SCRIPTS_DIR/* /usr/local/bin/
-  chmod +x /usr/local/bin/*
-  echo "Scripts copied and made executable."
+  echo "Making scripts executable and copying to /usr/local/bin"
+  chmod +x "$SCRIPTS_DIR"/* || { echo "Failed to make scripts executable!"; exit 1; }
+  cp "$SCRIPTS_DIR"/* /usr/local/bin/ || { echo "Failed to copy scripts!"; exit 1; }
 else
-  echo "Warning: 'scripts' directory not found."
+  echo "Scripts directory not found!"
+  exit 1
 fi
+
+echo "Configuration and script setup completed successfully."
 
 echo "Setup complete!"
