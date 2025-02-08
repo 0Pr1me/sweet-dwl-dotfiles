@@ -1,6 +1,6 @@
 # sweet-dwl-dotfiles
 
-A lightweight desktop experience for Arch-based GNU/Linux distributions made with a custom dwl configuration :) Comes with a installer too!
+A lightweight desktop experience for Arch-based GNU/Linux distributions made with a custom dwl configuration :) Comes with an installer too!
 
 ![screenshot_2024-11-17-155846](https://github.com/user-attachments/assets/64958040-6dcf-4c87-8339-34c918afab2f)
 
