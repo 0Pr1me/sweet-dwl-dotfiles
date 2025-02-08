@@ -56,9 +56,19 @@ cd ..
 CONFIGS_DIR="$(dirname "$0")/configs"
 if [ -d "$CONFIGS_DIR" ]; then
   echo "Copying config files to /home/.config"
-  cp -r "$CONFIGS_DIR"/* /home/$(ls /home | head -n 1)/.config/ || { echo "Failed to copy config files!"; exit 1; }
+  cp -r "$CONFIGS_DIR"/* "$HOME/.config/" || { echo "Failed to copy config files!"; exit 1; }
 else
   echo "Config directory not found!"
+  exit 1
+fi
+
+SCRIPTS_DIR="$(dirname "$0")/scripts"
+if [ -d "$SCRIPTS_DIR" ]; then
+  echo "Making scripts executable and copying to /usr/local/bin"
+  chmod +x "$SCRIPTS_DIR"/\* || { echo "Failed to make scripts executable!"; exit 1; }
+  cp "$SCRIPTS_DIR"/* /usr/local/bin/ || { echo "Failed to copy scripts!"; exit 1; }
+else
+  echo "Scripts directory not found!"
   exit 1
 fi
 
